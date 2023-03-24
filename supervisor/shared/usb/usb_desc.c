@@ -296,7 +296,8 @@ static void usb_build_interface_string_table(void) {
         allocate_memory(align32_size(current_interface_string * 2 + collected_interface_strings_length * 2),
             /*high_address*/ false, /*movable*/ false);
     uint16_t *string_descriptors = (uint16_t *)string_descriptors_allocation->ptr;
-
+    test5 = current_interface_string;
+    test6 = collected_interface_strings_length;
 
     uint16_t *string_descriptor = string_descriptors;
 
