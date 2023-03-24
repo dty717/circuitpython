@@ -595,11 +595,13 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
                 printf("tud_descriptor_string_cb index %d,langid%d\r\n", text2[i], text3[i]);
                 /* code */
             }
-
-            printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
-            printf("device_descriptor_allocation size:%d\r\n",sizeof(device_descriptor_allocation->ptr));
-            printf("configuration_descriptor_allocation size:%d\r\n",sizeof(configuration_descriptor_allocation->ptr));
-            printf("string_descriptors_allocation size:%d\r\n",sizeof(string_descriptors_allocation[0].ptr));
+            if(test9){
+                printf("CIRCUITPY_USB_HID\r\n");
+            }
+            // printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
+            // printf("device_descriptor_allocation size:%d\r\n",sizeof(device_descriptor_allocation->ptr));
+            // printf("configuration_descriptor_allocation size:%d\r\n",sizeof(configuration_descriptor_allocation->ptr));
+            // printf("string_descriptors_allocation size:%d\r\n",sizeof(string_descriptors_allocation[0].ptr));
             // printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
             // print_buf((uint8_t *)device_descriptor_allocation->ptr, 400);
             // printf("\r\n");

@@ -139,6 +139,7 @@ void usb_get_boot_py_data(uint8_t *temp_storage, size_t temp_storage_size) {
 // After VM is gone, save data into non-heap storage (storage_allocations).
 void usb_return_boot_py_data(uint8_t *temp_storage, size_t temp_storage_size) {
     #if CIRCUITPY_USB_HID
+    test9 = 1;
     usb_hid_save_report_descriptor(temp_storage, temp_storage_size);
     #endif
 
