@@ -94,6 +94,17 @@ extern int test7;
 extern int test8;
 extern int test9;
 
+
+extern uint8_t *text1;
+extern uint8_t *text2;
+extern uint8_t *text3;
+extern uint8_t *text4;
+extern uint8_t *text5;
+extern uint8_t *text6;
+extern uint8_t *text7;
+extern uint8_t *text8;
+extern uint8_t *text9;
+
 // Propagate plug/unplug events to the MSC logic.
 #if CIRCUITPY_USB_MSC
 void usb_msc_mount(void);

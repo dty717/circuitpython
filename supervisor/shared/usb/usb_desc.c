@@ -144,6 +144,16 @@ int test7 = 0;
 int test8 = 0;
 int test9 = 0;
 
+uint8_t *text1;
+uint8_t *text2;
+uint8_t *text3;
+uint8_t *text4;
+uint8_t *text5;
+uint8_t *text6;
+uint8_t *text7;
+uint8_t *text8;
+uint8_t *text9;
+
 static void usb_build_configuration_descriptor(void) {
     size_t total_descriptor_length = sizeof(configuration_descriptor_template);
 
@@ -308,6 +318,10 @@ static void usb_build_interface_string_table(void) {
     // Start at 1 to skip the Language ID.
     for (uint8_t string_index = 1; string_index < current_interface_string; string_index++) {
         const char *str = collected_interface_strings[string_index].char_str;
+        if (string_index == 1)
+        {
+            text1 = str;
+        }
         const size_t str_len = strlen(str);
         // 1 word for descriptor type and length, 1 word for each character.
         const uint8_t descriptor_size_words = 1 + str_len;
