@@ -595,7 +595,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             printf("\r\n");
             print_buf((uint8_t *)configuration_descriptor_allocation->ptr, 400);
             printf("\r\n");
-            print_buf((uint8_t *)string_descriptors_allocation->ptr, 400);
+            print_buf((uint8_t *)string_descriptors_allocation->ptr, 800);
 
             printed_press_any_key = true;
         }
