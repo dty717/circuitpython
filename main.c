@@ -584,10 +584,14 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             }
             for (size_t i = 0; i < test7; i++)
             {
-                printf("tud_descriptor_configuration_cb index %d:%d\r\n",i,text1[i]);
+                printf("tud_descriptor_configuration_cb %d\r\n",text1[i]);
                 /* code */
             }
-           
+            for (size_t i = 0; i < test8; i++)
+            {
+                printf("tud_descriptor_string_cb index %d,langid%d\r\n", text2[i], text3[i]);
+                /* code */
+            }
 
             printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
             // printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
