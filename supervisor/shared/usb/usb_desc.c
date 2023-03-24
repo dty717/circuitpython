@@ -181,7 +181,7 @@ static void usb_build_configuration_descriptor(void) {
         total_descriptor_length += usb_vendor_descriptor_length();
     }
     #endif
-
+    test1 = total_descriptor_length;
 
     // Now we now how big the configuration descriptor will be, so we can allocate space for it.
     configuration_descriptor_allocation =
