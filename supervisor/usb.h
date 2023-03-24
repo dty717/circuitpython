@@ -30,6 +30,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+#include "supervisor/memory.h"
 
 // Ports must call this as frequently as they can in order to keep the USB
 // connection alive and responsive.  Normally this is called from background
