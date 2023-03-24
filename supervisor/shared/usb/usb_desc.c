@@ -373,7 +373,7 @@ uint8_t const *tud_descriptor_device_cb(void) {
 // Descriptor contents must exist long enough for transfer to complete
 uint8_t const *tud_descriptor_configuration_cb(uint8_t index) {
     (void)index;  // for multiple configurations
-    test7++;
+    text1[test7++] = index;
     return (uint8_t *)configuration_descriptor_allocation->ptr;
 }
 
