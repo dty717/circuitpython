@@ -575,6 +575,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             printf("USB_NUM_OUT_ENDPOINTS:%d\r\n",test4);
             printf("current_interface_string:%d\r\n",test5);
             printf("collected_interface_strings_length:%d\r\n",test6);
+            printf("tud_descriptor_configuration_cb:%d\r\n",test7);
             for (size_t i = 0; i < test5; i++)
             {
                 printf("collected_interface_strings %d:%s\r\n",i,collected_interface_strings[i].char_str);
