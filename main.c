@@ -329,6 +329,20 @@ STATIC void print_buf(const uint8_t *buf, size_t len) {
     }
 }
 
+STATIC const uint8_t configuration_descriptor_template[] = {
+    0x09,        // 0 bLength
+    0x02,        // 1 bDescriptorType (Configuration)
+    0xFF, 0xFF,  // 2,3 wTotalLength  [SET AT RUNTIME: lo, hi]
+#define CONFIG_TOTAL_LENGTH_LO_INDEX (2)
+#define CONFIG_TOTAL_LENGTH_HI_INDEX (3)
+    0xFF,        // 4 bNumInterfaces  [SET AT RUNTIME]
+#define CONFIG_NUM_INTERFACES_INDEX (4)
+    0x01,        // 5 bConfigurationValue
+    0x00,        // 6 iConfiguration (String Index)
+    0x80,        // 7 bmAttributes
+    0x32,        // 8 bMaxPower 100mA
+};
+
 STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_reset) {
     bool serial_connected_at_start = serial_connected();
     bool printed_safe_mode_message = false;
@@ -555,6 +569,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             serial_write_compressed(translate("Press any key to enter the REPL. Use CTRL-D to reload.\n"));
             serial_write("\r\n");
             serial_write("Hello world by dty717\n");
+            print("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
             // printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
             print_buf((uint8_t *)device_descriptor_allocation->ptr, 400);
 
