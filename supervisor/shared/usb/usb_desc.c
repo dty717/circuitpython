@@ -383,7 +383,9 @@ uint16_t const *tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
     if (index > MAX_INTERFACE_STRINGS) {
         return NULL;
     }
-    text2[test8++] = index;
-    text3[test8++] = langid;
+    if(test8<10){
+        text2[test8++] = index;
+        text3[test8++] = langid;        
+    }
     return collected_interface_strings[index].descriptor;
 }
