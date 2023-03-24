@@ -146,7 +146,7 @@ int test9 = 0;
 
 uint8_t text1[10];
 uint8_t text2[10];
-uint8_t text3[10];
+uint16_t text3[10];
 uint8_t text4[10];
 uint8_t text5[10];
 uint8_t text6[10];
