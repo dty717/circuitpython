@@ -42,6 +42,7 @@
 
 #include "shared/readline/readline.h"
 #include "shared/runtime/pyexec.h"
+#include "supervisor/usb.h"
 
 #include "background.h"
 #include "mpconfigboard.h"
@@ -543,6 +544,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             serial_write_compressed(translate("Press any key to enter the REPL. Use CTRL-D to reload.\n"));
             serial_write("\r\n");
             serial_write("Hello world by dty717\n");
+            printf("device_descriptor_template:%d\r\n",device_descriptor_template[0]);
             printed_press_any_key = true;
         }
         if (!serial_connected()) {
