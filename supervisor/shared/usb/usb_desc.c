@@ -59,7 +59,7 @@ typedef union {
     const char *char_str;
     const uint16_t *descriptor;
 } interface_string_t;
-static interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
+interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
 
 static size_t collected_interface_strings_length;
 static uint8_t current_interface_string;
