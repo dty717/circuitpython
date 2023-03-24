@@ -144,15 +144,15 @@ int test7 = 0;
 int test8 = 0;
 int test9 = 0;
 
-uint8_t *text1;
-uint8_t *text2;
-uint8_t *text3;
-uint8_t *text4;
-uint8_t *text5;
-uint8_t *text6;
-uint8_t *text7;
-uint8_t *text8;
-uint8_t *text9;
+uint8_t text1[10];
+uint8_t text2[10];
+uint8_t text3[10];
+uint8_t text4[10];
+uint8_t text5[10];
+uint8_t text6[10];
+uint8_t text7[10];
+uint8_t text8[10];
+uint8_t text9[10];
 
 static void usb_build_configuration_descriptor(void) {
     size_t total_descriptor_length = sizeof(configuration_descriptor_template);

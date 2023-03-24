@@ -95,15 +95,15 @@ extern int test8;
 extern int test9;
 
 
-extern uint8_t *text1;
-extern uint8_t *text2;
-extern uint8_t *text3;
-extern uint8_t *text4;
-extern uint8_t *text5;
-extern uint8_t *text6;
-extern uint8_t *text7;
-extern uint8_t *text8;
-extern uint8_t *text9;
+extern uint8_t text1[10];
+extern uint8_t text2[10];
+extern uint8_t text3[10];
+extern uint8_t text4[10];
+extern uint8_t text5[10];
+extern uint8_t text6[10];
+extern uint8_t text7[10];
+extern uint8_t text8[10];
+extern uint8_t text9[10];
 
 // Propagate plug/unplug events to the MSC logic.
 #if CIRCUITPY_USB_MSC
