@@ -576,7 +576,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             printf("current_interface_string:%d\r\n",test5);
             printf("collected_interface_strings_length:%d\r\n",test6);
             printf("tud_descriptor_configuration_cb:%d\r\n",test7);
-            printf("device_descriptor_allocation:%s\r\n",device_descriptor_allocation->ptr);
+            printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
             for (size_t i = 0; i < test5; i++)
             {
                 printf("collected_interface_strings %d:%s\r\n",i,collected_interface_strings[i].char_str);
