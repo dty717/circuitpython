@@ -353,7 +353,7 @@ void usb_build_descriptors(void) {
 
     // Null-terminate the string.
     serial_number_hex_string[sizeof(serial_number_hex_string) - 1] = '\0';
-
+    text4 = serial_number_hex_string;
     current_interface_string = 1;
     collected_interface_strings_length = 0;
 
