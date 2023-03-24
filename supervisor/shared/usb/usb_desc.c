@@ -64,9 +64,9 @@ static interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
 static size_t collected_interface_strings_length;
 static uint8_t current_interface_string;
 
-static supervisor_allocation *device_descriptor_allocation;
-static supervisor_allocation *configuration_descriptor_allocation;
-static supervisor_allocation *string_descriptors_allocation;
+supervisor_allocation *device_descriptor_allocation;
+supervisor_allocation *configuration_descriptor_allocation;
+supervisor_allocation *string_descriptors_allocation;
 
 static const char manufacturer_name[] = USB_MANUFACTURER;
 static const char product_name[] = USB_PRODUCT;

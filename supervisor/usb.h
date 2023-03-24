@@ -72,8 +72,9 @@ void usb_return_boot_py_data(uint8_t *temp_storage, size_t temp_storage_size);
 // Further initialization that must be done with a VM present.
 void usb_setup_with_vm(void);
 
-// extern const uint8_t device_descriptor_template[];
-
+extern supervisor_allocation *device_descriptor_allocation;
+extern supervisor_allocation *configuration_descriptor_allocation;
+extern supervisor_allocation *string_descriptors_allocation;
 // Propagate plug/unplug events to the MSC logic.
 #if CIRCUITPY_USB_MSC
 void usb_msc_mount(void);
