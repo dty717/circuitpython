@@ -262,6 +262,9 @@ static void usb_build_configuration_descriptor(void) {
 
     // Now we know how many interfaces have been used.
     configuration_descriptor[CONFIG_NUM_INTERFACES_INDEX] = descriptor_counts.current_interface;
+    test2 = USB_NUM_ENDPOINT_PAIRS;
+    test3 = USB_NUM_IN_ENDPOINTS;
+    test4 = USB_NUM_OUT_ENDPOINTS;
 
     // Did we run out of endpoints?
     if (descriptor_counts.current_endpoint > USB_NUM_ENDPOINT_PAIRS ||
