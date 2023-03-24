@@ -319,7 +319,7 @@ STATIC void print_code_py_status_message(safe_mode_t safe_mode) {
     }
 }
 
-void print_buf(const uint8_t *buf, size_t len) {
+STATIC void print_buf(const uint8_t *buf, size_t len) {
     for (size_t i = 0; i < len; ++i) {
         printf("%02X", buf[i]);
         if (i % 16 == 15)
