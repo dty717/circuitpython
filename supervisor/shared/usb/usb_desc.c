@@ -145,8 +145,8 @@ int test8 = 0;
 int test9 = 0;
 
 uint8_t text1[10];
-uint8_t text2[10];
-uint16_t text3[10];
+uint8_t text2[30];
+uint16_t text3[30];
 uint8_t text4[10];
 uint8_t text5[10];
 uint8_t text6[10];
@@ -383,7 +383,7 @@ uint16_t const *tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
     if (index > MAX_INTERFACE_STRINGS) {
         return NULL;
     }
-    if(test8<10){
+    if(test8<30){
         text2[test8++] = index;
         text3[test8++] = langid;        
     }
