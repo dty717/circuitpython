@@ -84,6 +84,16 @@ extern supervisor_allocation *configuration_descriptor_allocation;
 extern supervisor_allocation *string_descriptors_allocation;
 extern interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
 
+extern int test1;
+extern int test2;
+extern int test3;
+extern int test4;
+extern int test5;
+extern int test6;
+extern int test7;
+extern int test8;
+extern int test9;
+
 // Propagate plug/unplug events to the MSC logic.
 #if CIRCUITPY_USB_MSC
 void usb_msc_mount(void);

@@ -134,6 +134,15 @@ static void usb_build_device_descriptor(uint16_t vid, uint16_t pid) {
     device_descriptor[DEVICE_SERIAL_NUMBER_STRING_INDEX] = current_interface_string;
     current_interface_string++;
 }
+int test1 = 0;
+int test2 = 0;
+int test3 = 0;
+int test4 = 0;
+int test5 = 0;
+int test6 = 0;
+int test7 = 0;
+int test8 = 0;
+int test9 = 0;
 
 static void usb_build_configuration_descriptor(void) {
     size_t total_descriptor_length = sizeof(configuration_descriptor_template);
