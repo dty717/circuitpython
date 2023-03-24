@@ -579,7 +579,9 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
             for (size_t i = 0; i < MAX_INTERFACE_STRINGS; i++)
             {
-                printf("collected_interface_strings %d:%s\r\n",i,(uint8_t *)collected_interface_strings[i].descriptor);
+                // printf("collected_interface_strings %d:%s\r\n",i,(uint8_t *)collected_interface_strings[i].descriptor);
+                print_buf((uint8_t *)collected_interface_strings[i].descriptor, 30);
+                printf("\r\n");
                 /* code */
             }
 
@@ -605,7 +607,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             // printf("\r\n");
             // print_buf((uint8_t *)string_descriptors_allocation->ptr, 800);
             // printf("\r\n");
-            print_buf((uint8_t *)collected_interface_strings, 1400);
+            // print_buf((uint8_t *)collected_interface_strings, 1400);
 
             printed_press_any_key = true;
         }
