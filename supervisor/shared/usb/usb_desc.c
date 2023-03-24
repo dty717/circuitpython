@@ -53,12 +53,9 @@
 
 // Table for collecting interface strings (interface names) as descriptor is built.
 // We reuse the same table after collection, replacing the char string pointers with le16 string pointers.
-#define MAX_INTERFACE_STRINGS 16
+// #define MAX_INTERFACE_STRINGS 16
 // slot 0 is always the Language ID
-typedef union {
-    const char *char_str;
-    const uint16_t *descriptor;
-} interface_string_t;
+
 interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
 
 static size_t collected_interface_strings_length;

@@ -74,6 +74,10 @@ void usb_return_boot_py_data(uint8_t *temp_storage, size_t temp_storage_size);
 void usb_setup_with_vm(void);
 
 #define MAX_INTERFACE_STRINGS 16
+typedef union {
+    const char *char_str;
+    const uint16_t *descriptor;
+} interface_string_t;
 
 extern supervisor_allocation *device_descriptor_allocation;
 extern supervisor_allocation *configuration_descriptor_allocation;
