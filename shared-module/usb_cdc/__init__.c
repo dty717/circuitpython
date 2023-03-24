@@ -170,8 +170,10 @@ static bool usb_cdc_console_is_enabled;
 static bool usb_cdc_data_is_enabled;
 
 void usb_cdc_set_defaults(void) {
-    common_hal_usb_cdc_enable(CIRCUITPY_USB_CDC_CONSOLE_ENABLED_DEFAULT,
-        CIRCUITPY_USB_CDC_DATA_ENABLED_DEFAULT);
+    // common_hal_usb_cdc_enable(CIRCUITPY_USB_CDC_CONSOLE_ENABLED_DEFAULT,
+    //     CIRCUITPY_USB_CDC_DATA_ENABLED_DEFAULT);
+    common_hal_usb_cdc_enable(true,
+        true);        
 }
 
 bool usb_cdc_console_enabled(void) {
