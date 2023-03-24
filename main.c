@@ -319,6 +319,16 @@ STATIC void print_code_py_status_message(safe_mode_t safe_mode) {
     }
 }
 
+void print_buf(const uint8_t *buf, size_t len) {
+    for (size_t i = 0; i < len; ++i) {
+        printf("%02X", buf[i]);
+        if (i % 16 == 15)
+            printf("\n");
+        else
+            printf(" ");
+    }
+}
+
 STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_reset) {
     bool serial_connected_at_start = serial_connected();
     bool printed_safe_mode_message = false;
@@ -545,7 +555,9 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             serial_write_compressed(translate("Press any key to enter the REPL. Use CTRL-D to reload.\n"));
             serial_write("\r\n");
             serial_write("Hello world by dty717\n");
-            printf("device_descriptor_allocation:%s\r\n",(uint8_t *)device_descriptor_allocation->ptr);
+            // printf("device_descriptor_allocation:%s\r\n",device_descriptor_allocation->ptr);
+            print_buf(device_descriptor_allocation->ptr, 400);
+
             printed_press_any_key = true;
         }
         if (!serial_connected()) {
