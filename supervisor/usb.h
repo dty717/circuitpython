@@ -78,7 +78,9 @@ typedef union {
     const char *char_str;
     const uint16_t *descriptor;
 } interface_string_t;
+// #define COMMON_HAL_MCU_PROCESSOR_UID_LENGTH 16
 
+extern char serial_number_hex_string[16 * 2 + 1];
 extern supervisor_allocation *device_descriptor_allocation;
 extern supervisor_allocation *configuration_descriptor_allocation;
 extern supervisor_allocation *string_descriptors_allocation;
