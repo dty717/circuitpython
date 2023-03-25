@@ -69,7 +69,7 @@ static const char manufacturer_name[] = USB_MANUFACTURER;
 static const char product_name[] = USB_PRODUCT;
 
 // Serial number string is UID length * 2 (2 nibbles per byte) + 1 byte for null termination.
-char serial_number_hex_string[COMMON_HAL_MCU_PROCESSOR_UID_LENGTH * 2 + 1]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+char serial_number_hex_string[COMMON_HAL_MCU_PROCESSOR_UID_LENGTH * 2 + 1];
 
 
 static const uint8_t device_descriptor_template[] = {
