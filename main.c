@@ -597,7 +597,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             }
             if(test9){
                 printf("CIRCUITPY_USB_HID\r\n");
-                printf("usb_hid_enabled:%d\r\n",usb_hid_enabled());
+                // printf("usb_hid_enabled:%d\r\n",usb_hid_enabled());
             }
             printf("serial_number_hex_string:%s\r\n",serial_number_hex_string);
             // printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
