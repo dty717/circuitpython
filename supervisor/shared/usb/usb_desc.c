@@ -379,8 +379,11 @@ void usb_build_descriptors(void) {
     collected_interface_strings_length = 0;
 
     usb_build_device_descriptor(USB_VID, USB_PID);
+    text5[4] = collected_interface_strings_length;
     usb_build_configuration_descriptor();
+    text5[5] = collected_interface_strings_length;
     usb_build_interface_string_table();
+    text5[6] = collected_interface_strings_length;
 }
 
 // Invoked when GET DEVICE DESCRIPTOR is received.
