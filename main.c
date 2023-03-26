@@ -618,7 +618,10 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             {
                 printf("collected_interface_strings_length:%d\r\n", text5[i]);
             }
-
+            for (size_t i = 0; i < 10; i++)
+            {
+                printf("descriptor_counts.current_interface:%d\r\n", text6[i]);
+            }
             // printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
             // printf("device_descriptor_allocation size:%d\r\n",sizeof(device_descriptor_allocation->ptr));
             // printf("configuration_descriptor_allocation size:%d\r\n",sizeof(configuration_descriptor_allocation->ptr));
