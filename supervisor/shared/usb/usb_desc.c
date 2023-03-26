@@ -240,21 +240,22 @@ static void usb_build_configuration_descriptor(void) {
     };
 
     uint8_t *descriptor_buf_remaining = configuration_descriptor + sizeof(configuration_descriptor_template);
-
+    text6[0] = descriptor_counts.current_interface;
     #if CIRCUITPY_USB_CDC
     text5[7] = collected_interface_strings_length;
     if (usb_cdc_console_enabled()) {
         // Concatenate and fix up the CDC REPL descriptor.
         descriptor_buf_remaining += usb_cdc_add_descriptor(
             descriptor_buf_remaining, &descriptor_counts, &current_interface_string, true /*console*/);
-
     }
+    text6[1] = descriptor_counts.current_interface;
     text5[8] = collected_interface_strings_length;
     if (usb_cdc_data_enabled()) {
         // Concatenate and fix up the CDC data descriptor.
         descriptor_buf_remaining += usb_cdc_add_descriptor(
             descriptor_buf_remaining, &descriptor_counts, &current_interface_string, false /*console*/);
     }
+    text6[2] = descriptor_counts.current_interface;
     text5[9] = collected_interface_strings_length;
     #endif
 
