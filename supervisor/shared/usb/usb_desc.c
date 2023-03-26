@@ -381,13 +381,16 @@ void usb_build_descriptors(void) {
 
     current_interface_string = 1;
     collected_interface_strings_length = 0;
-
+    text7[0] = current_interface_string;
     usb_build_device_descriptor(USB_VID, USB_PID);
     text5[4] = collected_interface_strings_length;
+    text7[1] = current_interface_string;
     usb_build_configuration_descriptor();
     text5[5] = collected_interface_strings_length;
+    text7[2] = current_interface_string;
     usb_build_interface_string_table();
     text5[6] = collected_interface_strings_length;
+    text7[3] = current_interface_string;
 }
 
 // Invoked when GET DEVICE DESCRIPTOR is received.
