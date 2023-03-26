@@ -221,19 +221,19 @@ size_t usb_cdc_add_descriptor(uint8_t *descriptor_buf, descriptor_counts_t *desc
         : (USB_CDC2_EP_NUM_DATA_OUT ? USB_CDC2_EP_NUM_DATA_OUT : descriptor_counts->current_endpoint);
     descriptor_counts->num_out_endpoints++;
     descriptor_counts->current_endpoint++;
-    text5[7] = collected_interface_strings_length;
+    // text5[7] = collected_interface_strings_length;
 
     usb_add_interface_string(*current_interface_string,
         console ? console_cdc_comm_interface_name : data_cdc_comm_interface_name);
     descriptor_buf[CDC_COMM_INTERFACE_STRING_INDEX] = *current_interface_string;
     (*current_interface_string)++;
-    text5[8] = collected_interface_strings_length;
+    // text5[8] = collected_interface_strings_length;
 
     usb_add_interface_string(*current_interface_string,
         console ? console_cdc_data_interface_name : data_cdc_data_interface_name);
     descriptor_buf[CDC_DATA_INTERFACE_STRING_INDEX] = *current_interface_string;
     (*current_interface_string)++;
-    text5[9] = collected_interface_strings_length;
+    // text5[9] = collected_interface_strings_length;
 
     return sizeof(usb_cdc_descriptor_template);
 }
