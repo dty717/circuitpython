@@ -156,44 +156,45 @@ uint8_t text9[10];
 
 static void usb_build_configuration_descriptor(void) {
     size_t total_descriptor_length = sizeof(configuration_descriptor_template);
+    text4[0] = total_descriptor_length;
 
     // CDC should be first, for compatibility with Adafruit Windows 7 drivers.
     // In the past, the order has been CDC, MSC, MIDI, HID, so preserve that order.
     #if CIRCUITPY_USB_CDC
     if (usb_cdc_console_enabled()) {
-        text4[0] =  usb_cdc_descriptor_length();
+        text4[1] =  usb_cdc_descriptor_length();
         total_descriptor_length += usb_cdc_descriptor_length();
     }
     if (usb_cdc_data_enabled()) {
-        text4[1] =  usb_cdc_descriptor_length();
+        text4[2] =  usb_cdc_descriptor_length();
         total_descriptor_length += usb_cdc_descriptor_length();
     }
     #endif
 
     #if CIRCUITPY_USB_MSC
     if (storage_usb_enabled()) {
-        text4[2] = storage_usb_descriptor_length();
+        text4[3] = storage_usb_descriptor_length();
         total_descriptor_length += storage_usb_descriptor_length();
     }
     #endif
 
     #if CIRCUITPY_USB_HID
     if (usb_hid_enabled()) {
-        text4[3] = usb_hid_enabled();
+        text4[4] = usb_hid_enabled();
         total_descriptor_length += usb_hid_descriptor_length();
     }
     #endif
 
     #if CIRCUITPY_USB_MIDI
     if (usb_midi_enabled()) {
-        text4[4] = usb_midi_descriptor_length();
+        text4[5] = usb_midi_descriptor_length();
         total_descriptor_length += usb_midi_descriptor_length();
     }
     #endif
 
     #if CIRCUITPY_USB_VENDOR
     if (usb_vendor_enabled()) {
-        text4[5] = usb_vendor_descriptor_length();
+        text4[6] = usb_vendor_descriptor_length();
         total_descriptor_length += usb_vendor_descriptor_length();
     }
     #endif

@@ -595,7 +595,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
                 printf("tud_descriptor_string_cb index %d,langid %d\r\n", text2[i], text3[i]);
                 /* code */
             }
-            for (size_t i = 0; i < 6; i++)
+            for (size_t i = 0; i < 8; i++)
             {
                 printf("total_descriptor_length %d\r\n", text4[i]);
                 /* code */
