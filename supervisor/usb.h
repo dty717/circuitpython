@@ -95,7 +95,16 @@ extern int test6;
 extern int test7;
 extern int test8;
 extern int test9;
-
+extern int test10;
+extern int test11;
+extern int test12;
+extern int test13;
+extern int test14;
+extern int test15;
+extern int test16;
+extern int test17;
+extern int test18;
+extern int test19;
 
 extern uint8_t text1[10];
 extern uint8_t text2[113];

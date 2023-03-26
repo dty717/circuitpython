@@ -110,6 +110,36 @@ static const uint8_t configuration_descriptor_template[] = {
     0x32,        // 8 bMaxPower 100mA
 };
 
+int test1 = 0;
+int test2 = 0;
+int test3 = 0;
+int test4 = 0;
+int test5 = 0;
+int test6 = 0;
+int test7 = 0;
+int test8 = 0;
+int test9 = 0;
+int test10 = 0;
+int test11 = 0;
+int test12 = 0;
+int test13 = 0;
+int test14 = 0;
+int test15 = 0;
+int test16 = 0;
+int test17 = 0;
+int test18 = 0;
+int test19 = 0;
+
+uint8_t text1[10];
+uint8_t text2[113];
+uint16_t text3[113];
+uint8_t text4[10];
+uint8_t text5[10];
+uint8_t text6[10];
+uint8_t text7[10];
+uint8_t text8[10];
+uint8_t text9[10];
+
 static void usb_build_device_descriptor(uint16_t vid, uint16_t pid) {
     device_descriptor_allocation =
         allocate_memory(align32_size(sizeof(device_descriptor_template)),
@@ -121,38 +151,21 @@ static void usb_build_device_descriptor(uint16_t vid, uint16_t pid) {
     device_descriptor[DEVICE_VID_HI_INDEX] = vid >> 8;
     device_descriptor[DEVICE_PID_LO_INDEX] = pid & 0xFF;
     device_descriptor[DEVICE_PID_HI_INDEX] = pid >> 8;
-
+    text5[0] = collected_interface_strings_length;
     usb_add_interface_string(current_interface_string, manufacturer_name);
     device_descriptor[DEVICE_MANUFACTURER_STRING_INDEX] = current_interface_string;
     current_interface_string++;
-
+    text5[1] = collected_interface_strings_length;
     usb_add_interface_string(current_interface_string, product_name);
     device_descriptor[DEVICE_PRODUCT_STRING_INDEX] = current_interface_string;
     current_interface_string++;
-
+    text5[2] = collected_interface_strings_length;
     usb_add_interface_string(current_interface_string, serial_number_hex_string);
     device_descriptor[DEVICE_SERIAL_NUMBER_STRING_INDEX] = current_interface_string;
     current_interface_string++;
-}
-int test1 = 0;
-int test2 = 0;
-int test3 = 0;
-int test4 = 0;
-int test5 = 0;
-int test6 = 0;
-int test7 = 0;
-int test8 = 0;
-int test9 = 0;
+    text5[3] = collected_interface_strings_length;
 
-uint8_t text1[10];
-uint8_t text2[113];
-uint16_t text3[113];
-uint8_t text4[10];
-uint8_t text5[10];
-uint8_t text6[10];
-uint8_t text7[10];
-uint8_t text8[10];
-uint8_t text9[10];
+}
 
 static void usb_build_configuration_descriptor(void) {
     size_t total_descriptor_length = sizeof(configuration_descriptor_template);
