@@ -605,7 +605,15 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
                 printf("CIRCUITPY_USB_HID\r\n");
                 // printf("usb_hid_enabled:%d\r\n",usb_hid_enabled());
             }
-            printf("serial_number_hex_string:%s\r\n",serial_number_hex_string);
+
+            printf("serial_number_hex_string:");
+            for (size_t i = 0; i < 33; i++)
+            {
+                // ,serial_number_hex_string
+                printf("%c",serial_number_hex_string[i]);
+                /* code */
+            }
+            printf("\r\n");
             // printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
             // printf("device_descriptor_allocation size:%d\r\n",sizeof(device_descriptor_allocation->ptr));
             // printf("configuration_descriptor_allocation size:%d\r\n",sizeof(configuration_descriptor_allocation->ptr));
