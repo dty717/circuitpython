@@ -580,7 +580,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             for (size_t i = 0; i < MAX_INTERFACE_STRINGS; i++)
             {
                 // printf("collected_interface_strings %d:%s\r\n",i,(uint8_t *)collected_interface_strings[i].descriptor);
-                print_buf((uint8_t *)collected_interface_strings[i].descriptor, 30);
+                print_buf((uint8_t *)(collected_interface_strings[i].descriptor+1), 30);
                 printf("\r\n");
                 /* code */
             }
@@ -624,7 +624,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             }
             for (size_t i = 0; i < 10; i++)
             {
-                printf("descriptor_counts:%d\r\n", text7[i]);
+                printf("current_interface_string:%d\r\n", text7[i]);
             }
             // printf("configuration_descriptor_template size:%d\r\n",sizeof(configuration_descriptor_template));
             // printf("device_descriptor_allocation size:%d\r\n",sizeof(device_descriptor_allocation->ptr));
