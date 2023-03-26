@@ -85,6 +85,7 @@ extern supervisor_allocation *device_descriptor_allocation;
 extern supervisor_allocation *configuration_descriptor_allocation;
 extern supervisor_allocation *string_descriptors_allocation;
 extern interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
+extern size_t collected_interface_strings_length;
 
 extern int test1;
 extern int test2;

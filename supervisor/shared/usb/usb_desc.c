@@ -58,7 +58,7 @@
 
 interface_string_t collected_interface_strings[MAX_INTERFACE_STRINGS];
 
-static size_t collected_interface_strings_length;
+size_t collected_interface_strings_length;
 static uint8_t current_interface_string;
 
 supervisor_allocation *device_descriptor_allocation;
