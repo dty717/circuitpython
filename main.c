@@ -592,9 +592,15 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             }
             for (size_t i = 0; i < test8; i++)
             {
-                printf("tud_descriptor_string_cb index %d,langid%d\r\n", text2[i], text3[i]);
+                printf("tud_descriptor_string_cb index %d,langid %d\r\n", text2[i], text3[i]);
                 /* code */
             }
+            for (size_t i = 0; i < 6; i++)
+            {
+                printf("total_descriptor_length %d\r\n", text4[i]);
+                /* code */
+            }
+            
             if(test9){
                 printf("CIRCUITPY_USB_HID\r\n");
                 // printf("usb_hid_enabled:%d\r\n",usb_hid_enabled());
