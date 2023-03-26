@@ -580,7 +580,7 @@ STATIC bool run_code_py(safe_mode_t safe_mode, bool first_run, bool *simulate_re
             for (size_t i = 0; i < MAX_INTERFACE_STRINGS; i++)
             {
                 printf("collected_interface_strings %04X\r\n", collected_interface_strings[i].descriptor[0]);
-                print_buf((uint8_t *)(collected_interface_strings[i].descriptor + 1), 30);
+                print_buf((uint8_t *)(collected_interface_strings[i].descriptor + 1), 60);
                 printf("\r\n");
                 /* code */
             }
