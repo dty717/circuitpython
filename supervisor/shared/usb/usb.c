@@ -81,7 +81,7 @@ MP_WEAK void post_usb_init(void) {
 }
 
 void usb_init(void) {
-    // init_usb_hardware();
+    init_usb_hardware();
 
     tusb_init();
 
@@ -185,7 +185,7 @@ static void usb_background_do(void *unused) {
 }
 
 void usb_background_schedule(void) {
-    background_callback_add(&usb_callback, usb_background_do, NULL);
+    // background_callback_add(&usb_callback, usb_background_do, NULL);
 }
 
 void usb_irq_handler(int instance) {
