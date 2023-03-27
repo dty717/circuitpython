@@ -81,11 +81,11 @@ MP_WEAK void post_usb_init(void) {
 }
 
 void usb_init(void) {
-    init_usb_hardware();
+    // init_usb_hardware();
 
     tusb_init();
 
-    // post_usb_init();
+    post_usb_init();
 
     #if MICROPY_KBD_EXCEPTION && CIRCUITPY_USB_CDC
     // Set Ctrl+C as wanted char, tud_cdc_rx_wanted_cb() usb_callback will be invoked when Ctrl+C is received
