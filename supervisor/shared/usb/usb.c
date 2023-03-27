@@ -184,9 +184,16 @@ static void usb_background_do(void *unused) {
     usb_background();
 }
 
-void usb_background_schedule(void) {
-    usb_background();
-    // background_callback_add(&usb_callback, usb_background_do, NULL);
+// void usb_background_schedule(void) {
+//     background_callback_add(&usb_callback, usb_background_do, NULL);
+// }
+void usb_background_schedule(void)
+{
+    if (tusb_inited())
+    {
+        tud_task();
+        tud_cdc_write_flush();
+    }
 }
 
 void usb_irq_handler(int instance) {
