@@ -31,8 +31,8 @@
 #include "src/rp2_common/pico_platform/include/pico/platform.h"
 #include "src/rp2040/hardware_regs/include/hardware/regs/intctrl.h"
 
-void init_usb_hardware(void) {
-}
+// void init_usb_hardware(void) {
+// }
 
 STATIC void _usb_irq_wrapper(void) {
     usb_irq_handler(0);
