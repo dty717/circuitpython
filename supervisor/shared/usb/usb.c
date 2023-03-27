@@ -92,10 +92,10 @@ void usb_init(void) {
     // This usb_callback always got invoked regardless of mp_interrupt_char value since we only set it once here
 
     // Don't watch for ctrl-C if there is no REPL.
-    if (usb_cdc_console_enabled()) {
-        // Console will always be itf 0.
-        tud_cdc_set_wanted_char(CHAR_CTRL_C);
-    }
+    // if (usb_cdc_console_enabled()) {
+    //     // Console will always be itf 0.
+    //     tud_cdc_set_wanted_char(CHAR_CTRL_C);
+    // }
     #endif
 }
 
