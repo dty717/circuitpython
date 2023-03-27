@@ -185,6 +185,7 @@ static void usb_background_do(void *unused) {
 }
 
 void usb_background_schedule(void) {
+    usb_background();
     // background_callback_add(&usb_callback, usb_background_do, NULL);
 }
 
